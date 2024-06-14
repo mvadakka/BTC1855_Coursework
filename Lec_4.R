@@ -37,4 +37,27 @@ if(is.na(numeric.input)) {
   print(sum(1:numeric.input))
 }
 
+####### Write a script to check if the user input year is a leap year or not.
+#### A leap year is exactly divisible by 4 except for century years (years ending with 00). 
+#### The century year is a leap year only if it is perfectly divisible by 400.
+
+#plan
+# if year divisible by 4 mod 0
+# print "yes its a leap year"
+#if century, check if dividible by 400 mod 0
+# print "yes its leap year
+
+year.input <- readline(prompt = "Please enter a year to check if it is a leapyear")
+
+numeric.year <- as.numeric(year.input)
+
+if(is.na(numeric.year)) {
+  print(paste(year.input,"is not a Year. Please try again."))
+} else if (isTRUE(numeric.year%%4 == 0 | numeric.year %% 400 == 0)) {
+  print(paste(numeric.year, "is a leap year!"))
+} else {
+  print(paste(numeric.year,"is not a leap year."))
+}
+  
+
 
