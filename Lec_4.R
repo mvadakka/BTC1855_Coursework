@@ -51,9 +51,11 @@ year.input <- readline(prompt = "Please enter a year to check if it is a leapyea
 
 numeric.year <- as.numeric(year.input)
 
-if(is.na(numeric.year)) {
-  print(paste(year.input,"is not a Year. Please try again."))
-} else if (isTRUE(numeric.year%%4 == 0 | numeric.year %% 400 == 0)) {
+if(is.na(numeric.year) | numeric.year < 0) {
+  print(paste(year.input,"is not a valid Year. Please try again."))
+} else if (isTRUE(numeric.year%%400 == 0)) {
+  print(paste(numeric.year, "is a century leap year!"))
+} else if (isTRUE(numeric.year%%4 == 0)) {
   print(paste(numeric.year, "is a leap year!"))
 } else {
   print(paste(numeric.year,"is not a leap year."))
