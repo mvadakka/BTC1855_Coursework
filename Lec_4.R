@@ -47,17 +47,20 @@ if(is.na(numeric.input)) {
 #if century, check if dividible by 400 mod 0
 # print "yes its leap year
 
+#read user input
 year.input <- readline(prompt = "Please enter a year to check if it is a leapyear")
 
+#convert to numeric
 numeric.year <- as.numeric(year.input)
 
-if(is.na(numeric.year) | numeric.year < 0) {
+
+if(is.na(numeric.year) | numeric.year < 0) { #check if numeric is NA (non number value) and that the year value is not less than 0
   print(paste(year.input,"is not a valid Year. Please try again."))
-} else if (isTRUE(numeric.year%%400 == 0)) {
+} else if (isTRUE(numeric.year%%400 == 0)) { # print if numeric year is perfectly divisble by 400 it is a century leap year
   print(paste(numeric.year, "is a century leap year!"))
-} else if (isTRUE(numeric.year%%4 == 0)) {
+} else if (isTRUE(numeric.year%%4 == 0)) { # print if year is perfectly dividble by 4, is it leap year
   print(paste(numeric.year, "is a leap year!"))
-} else {
+} else { # all other instances are not leap years
   print(paste(numeric.year,"is not a leap year."))
 }
   
