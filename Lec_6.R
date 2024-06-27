@@ -25,3 +25,4 @@ sentence <- "this is the first line. \nThis is the second line"
 
 str_view(sentence, pattern = "i") #finds specific instances of match
 str_view(sentence, pattern = "[aeiou]")
+str_view(sentence, pattern = "[\\.]") # if used . on its own, it means look for any character, so have to use \\ before
